@@ -50,8 +50,19 @@ public class Client{
         output = new int[size];
     }
     //Выполнить вычисления(сделать результат)
+    
     public void do_work(void){
         //Вычисления производить здесь
+        int i = 0;
+        while (i < _size/2){
+            output[2*i] = input [2*i+1];
+            output[2*i+1] = input [2*i];
+            i++;
+        }
+        if (_size%2){
+            output[2*i] = input[2*i];
+        }
+      
     }    
     
     //Выдать входные данные
