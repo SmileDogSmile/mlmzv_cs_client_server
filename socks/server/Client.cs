@@ -53,6 +53,9 @@ public class Client{
     
     public void do_work(void){
         //Вычисления производить здесь
+        if (_size == 0){
+            return;
+        }
         int i = 0;
         while (i < _size/2){
             output[2*i] = input [2*i+1];
@@ -68,21 +71,35 @@ public class Client{
     //Выдать входные данные
     public int[] get_input(void){
         //Выдавать здесь
+        return input;
     }
     
     //Выдать результат
     public int[] get_output(void){
         //Выдавать здесь
+        return output;
     }
     
     //Сказать размер
     public int get_size(void){
         //Выдавать здесь
         //(размер хранится в свойстве _size)
+        return _size;
     }
     
     //Записать входные данные
     public void set_input(int[] _input){
         //Записывать здесь
+        if(!_input.Length){
+            input = output = null;
+            _size = 0;
+            return;
+        }
+        resize(_input.Length);
+        int i = 0; 
+        while (i<_size){
+            input [i] = _input[i];
+            i++;
+        }
     }
 }
