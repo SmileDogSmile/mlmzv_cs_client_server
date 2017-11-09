@@ -32,6 +32,7 @@ public class Client{
         //Выделение памяти
         _size = size;
         if(size<=0){
+            input = output = null;
             return;
         }
         input = new int[size];
