@@ -22,33 +22,33 @@ void do_nothing(void)
 
 public class Client{
     //Входные данные
-    private int[] input;
+    private int[] input;/// Клиент направляет массив на сервер, чтобы посчитать его.
     //Результат
-    private int[] output;
+    private int[] output; /// Результат манипуляции над массивом сервером.
     //Размер массивов
-    private int _size;
+    private int _size;/// Объявление размера массива серверу.
     //Конструктор
-    public Client(int size){
+    public Client(int size){ /// 
         //Выделение памяти
-        _size = size;
+        _size = size; /// 
         if(size<=0){
             input = output = null;
             return;
         }
-        input = new int[size];
-        output = new int[size];
+        input = new int[size];/// Объявление массива для input.
+        output = new int[size];/// Объявление массива для output.
         
     }
     //Изменить размер
-    public void resize(int size){       
-        input = output = null;
+    public void resize(int size){   
+        input = output = null;/// Приравнивание двух массивов к "Ничему".
         GC.Collect();
-        _size = size;
-        if(size <= 0){
+        _size = size;/// Старый размер массива приравнивается новому.
+        if(size <= 0){ /// Если размер массива равен нулю, то ничего не делать.
             return;
         }
-        input = new int[size];
-        output = new int[size];
+        input = new int[size];/// Объявление массива для input.
+        output = new int[size];/// Объявление массива для output.
     }
     //Выполнить вычисления(сделать результат)
     
